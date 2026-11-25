@@ -1,0 +1,7 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.env*
+favores-*.json
+supabase/.env.secrets
+supabase/.temp/
