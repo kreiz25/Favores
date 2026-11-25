@@ -43,13 +43,15 @@ GitHub Pages gratuíto require que o repositorio sexa público. O código fonte 
 
 ## Almacenamento e privacidade
 
-Os datos e anexos gárdanse no almacenamento do navegador deste dispositivo. Borrar os datos do sitio, cambiar de navegador ou perder o dispositivo pode eliminar rexistros. Exporta transferencias con frecuencia e gárdaas nun lugar privado. O navegador pode eliminar datos locais se queda sen espazo. Non hai analítica nin publicidade.
+Os datos e anexos gárdanse no almacenamento do navegador deste dispositivo. En **Configuración** hai cinco copias locais automáticas recentes, unha acción para crear unha copia ao momento e outra para solicitar ao navegador que evite a eliminación automática dos datos. A aplicación crea copias tras cambios e conserva unha copia de seguridade ao migrar a base de datos. Estas medidas axudan ante actualizacións e fallos, pero as copias permanecen no mesmo navegador.
+
+Borrar os datos do sitio, cambiar de navegador ou perder o dispositivo pode eliminar tanto os rexistros como as copias locais. Exporta con frecuencia a copia JSON e gárdaa nun lugar privado para ter unha copia independente. A protección de almacenamento depende do navegador e non impide que o usuario borre os datos. Non hai analítica nin publicidade.
 
 Os anexos non se inclúen no JSON. Sen activar cifrado, gárdanse localmente sen cifrar. Co cifrado activo, Web Crypto AES-GCM protexe o contido; PBKDF2-SHA-256 deriva a chave do contrasinal. O contrasinal non se garda nin se transmite. Se o esqueces, os anexos cifrados non se recuperan. Os nomes e tamaños dos ficheiros seguen visibles localmente. A implementación non foi auditada externamente e non substitúe unha bóveda especializada.
 
 ## Esquema local
 
-Dexie crea a base IndexedDB `favores-local`, versión 1, coas táboas de favores, contactos, anexos, actividade e configuración. As actualizacións futuras deben incrementar a versión e incluír unha migración sen borrar a base existente. Os anexos son blobs locais. A exportación JSON inclúe favores, contactos, categorías e actividade, pero non anexos nin configuración local.
+Dexie crea a base IndexedDB `favores-local`, versión 2, coas táboas de favores, contactos, anexos, actividade, configuración e copias locais. A migración desde a versión 1 garda primeiro unha copia dos datos existentes. As actualizacións futuras deben incrementar a versión e incluír unha migración sen borrar a base existente. Os anexos son blobs locais. A exportación JSON inclúe favores, contactos, categorías e actividade, pero non anexos nin configuración local. As copias locais tampouco inclúen anexos.
 
 ## Limitacións
 
